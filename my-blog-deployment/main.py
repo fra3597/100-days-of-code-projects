@@ -28,8 +28,8 @@ pip3 install -r requirements.txt
 This will install the packages from the requirements.txt for this project.
 '''
 
-
-app = Flask(__name__, instance_path='100-days-of-code-projects/my-blog-deployment/instance')
+current_directory = os.path.abspath(os.path.dirname(__file__))
+app = Flask(__name__, instance_path=f'{current_directory}/instance')
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
