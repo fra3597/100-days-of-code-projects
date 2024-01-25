@@ -29,9 +29,8 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 
-app = Flask(__name__, instance_path='C:/Users/franc/Desktop/100-days-of-code-projects/my-blog-deployment/instance')
+app = Flask(__name__, instance_path='100-days-of-code-projects/my-blog-deployment/instance')
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
-# app.config['INSTANCE_PATH'] = os.path.join(app.root_path, 'my-blog-deployment', 'instance')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -303,4 +302,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=False, port=5001)
